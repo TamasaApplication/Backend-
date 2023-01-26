@@ -1,0 +1,10 @@
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\bin\Debug\netcoreapp3.1\Tamasa.Core.deps.json
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\bin\Debug\netcoreapp3.1\Tamasa.Core.dll
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\bin\Debug\netcoreapp3.1\Tamasa.Core.pdb
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.csprojAssemblyReference.cache
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.AssemblyInfoInputs.cache
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.AssemblyInfo.cs
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.csproj.CoreCompileInputs.cache
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.dll
+C:\Users\mahmoudzadeh\Desktop\ahmad\GitHub\ChatMesssageBase2\Tamasa\Tamasa.Core\obj\Debug\netcoreapp3.1\Tamasa.Core.pdb
