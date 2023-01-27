@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f5Ywyz1katsiGJZSqX5SHZqa2lqSWPKq+l4cSjQnw6KDCZV1K2F94KpWHuQSmvVYmmQRnc5uCAQBjvYFC6d0tw==",
+  "dgSpecHash": "D8mA5//H4ulqcz3CSAze232NxC3hxTyGN/9HDb5AXQBUCbELWXHROm7yhUBjCBlfs+PsJe4AQPxHEyQATH7bSA==",
   "success": true,
-  "projectFilePath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj",
+  "projectFilePath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj",
   "expectedPackageFiles": [
     "/Users/ahmadhfr/.nuget/packages/mapster/6.5.1/mapster.6.5.1.nupkg.sha512",
     "/Users/ahmadhfr/.nuget/packages/mediatr/7.0.0/mediatr.7.0.0.nupkg.sha512",

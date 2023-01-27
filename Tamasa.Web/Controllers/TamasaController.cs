@@ -30,39 +30,110 @@ using Tamasa.Core.Logic;
 
 namespace Tamasa.Web.Controllers
 {
+
+   
+
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : BaseController
+    public class TamasaController : BaseController
     {
         private readonly IMediator _mediator;
         private readonly IUnitOfWork<AppDbContext> unitOfWork;
-        public WeatherForecastController(IMediator mediator, ILogger<WeatherForecastController> logger, IUnitOfWork<AppDbContext> unitOfWork)
+        private readonly IAES AES;
+        public TamasaController(IMediator mediator, ILogger<TamasaController> logger, IUnitOfWork<AppDbContext> unitOfWork, IAES aES)
         {
             _mediator = mediator;
             this.unitOfWork = unitOfWork;
+            this.AES = aES;
         }
 
 
 
 
-        //[HttpGet]
-        //public async Task<ServiceResult<MessageResultDto>> GetMessageById(string id)
-        //{
-        //    var query = new GetMessageQuery(id);
-        //    var result = await _mediator.Send(query);
-        //    return result;
-        //}
+        [HttpGet("GetUsdersInfoo")]
+        [Authorize]
+        public async Task<ActionResult> GetUsdersInfo(string id)
+        {
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
+
+            var contactRepo = unitOfWork.GetRepository<UserEntity>();
+
+            var instace = unitOfWork.GetRepository<UserEntity>()
+                .GetAll().Where(x => x.Id.ToString() == ownerId).First();
 
 
-        //[HttpPost]
-        //[Authorize]
-        //public async Task<IActionResult> GetUserIdsFromToken()
-        //{
-        //    var usrId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
-        //    return Ok(usrId.ToString());
-        //}
+            var tttt = new UsersInFoDtos()
+            {
+                Email = instace.Email,
+                Phone = instace.Phone
+            };
+
+            return Ok(tttt);
+        }
 
 
+
+
+        [HttpGet("UpdateMyInfoos")]
+        [Authorize]
+        public async Task<ActionResult> UpdateMyInfos(string Email, string Phone, string pass)
+        {
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
+
+            var contactRepo = unitOfWork.GetRepository<UserEntity>();
+
+            var ttt = await contactRepo.GetFirstOrDefaultAsync(predicate: x => x.Id.ToString() == ownerId);
+
+            var passWordHash = AES.Encrypt(pass);
+            ttt.Email = Email;
+            ttt.Phone = Phone;
+            ttt.PassWordHash = passWordHash;
+            ttt.PassWordSalt = passWordHash;
+
+            contactRepo.Update(ttt);
+
+
+
+            return Ok(ttt.Id);
+        }
+
+
+
+
+        [HttpGet("GetMyRelationss")]
+        [Authorize]
+        public async Task<ActionResult> GetMyRelationsByRelationTypeId(string typeId)
+        {
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
+
+            var relationsRepo = unitOfWork.GetRepository<RelationEntity>();
+            var participandRelationsRepo = unitOfWork.GetRepository<RelationPaticipandsEntity>();
+            var contactsRepo = unitOfWork.GetRepository<ContactEntities>();
+
+            var myRelation = relationsRepo.GetAll().Where(x => x.OwnerId == ownerId && x.RelationTypeId == typeId).First();
+
+
+
+
+            var participandsRelation = participandRelationsRepo.GetAll().Where(x => myRelation.Id == x.Id).Select(x => new MyRelationsByRelationTypeResult()
+            {
+                relationId = x.RelationId,
+                ContactId = x.ContactId
+            }).ToList();
+
+
+            var contactIds = participandsRelation.Select(x => x.ContactId).ToList();
+
+
+            var contas = contactsRepo.GetAll().Where(x => contactIds.Contains(x.Id.ToString())).ToList();
+
+            var res = new GetMyRelationsByRelationTypeResultDtos();
+            res.Location = myRelation.Location;
+            res.Discription = myRelation.Discription;
+            res.contats = contas.Select(x => new GetUsersInfosDtos(x.ContectName, x.ContectPhone)).ToList();
+
+            return Ok(res);
+        }
 
 
         [HttpPost("CreateRelationType")]
@@ -78,12 +149,11 @@ namespace Tamasa.Web.Controllers
 
 
         [HttpPost("InsertContaces")]
-       /// [Authorize]
+        [Authorize]
         public async Task<ActionResult> AddContact([FromBody] List<AddContactDto> input)
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95";
-            //HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
-            var command = new InsertToMyContactCommand(input,ownerId.ToString());
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var command = new InsertToMyContactCommand(input, ownerId.ToString());
             var result = await _mediator.Send<ServiceResult<string>>(command);
             return await result.AsyncResult();
         }
@@ -94,11 +164,10 @@ namespace Tamasa.Web.Controllers
 
 
         [HttpGet("GetMyContacts")]
-      //  [Authorize]
+        [Authorize]
         public async Task<ActionResult> GetMyContacts()
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95";
-            ///HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
             var command = new GetMyContactsQuery(ownerId.ToString());
             var result = await _mediator.Send<ServiceResult<List<GetMyContactsResultDto>>>(command);
             return await result.AsyncResult();
@@ -108,12 +177,11 @@ namespace Tamasa.Web.Controllers
 
 
         [HttpPost("CreateRelation")]
-      ///  [Authorize]
+        [Authorize]
         public async Task<ActionResult> CreateRelation(CreateRelationInputDto input)
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95";
-            ///HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
-            var command = new CreateRelationCommad(input.OwnerId, input.ContactId,input.RelationTypeId, input.Location, input.Discription);
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var command = new CreateRelationCommad(input.OwnerId, input.ContactId, input.RelationTypeId, input.Location, input.Discription);
             var result = await _mediator.Send<ServiceResult<string>>(command);
             return await result.AsyncResult();
         }
@@ -121,15 +189,20 @@ namespace Tamasa.Web.Controllers
 
 
         [HttpGet("GetMyRelations")]
-      ///  [Authorize]
+        [Authorize]
         public async Task<ActionResult> GetMyRelations()
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95"; 
-            ///HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
             var command = new GetMyRelationsQuery(ownerId.ToString());
             var result = await _mediator.Send<ServiceResult<List<GetMyRelationsQueryResultDto>>>(command);
             return await result.AsyncResult();
         }
+
+
+
+
+
+
 
 
 
@@ -172,8 +245,7 @@ namespace Tamasa.Web.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> SearchOnMyCantacts([FromBody] SearchFilter sf)
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95";
-                ///HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 
             sf = sf?.CheckNullDefault();
             var whereClause = sf.Translate<ContactEntities>();
@@ -222,11 +294,11 @@ namespace Tamasa.Web.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> SearchOnRElation([FromBody] SearchFilter sf)
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95";
-            //HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 
             var contactRepo = unitOfWork.GetRepository<ContactEntities>();
             var relationTypeRepo = unitOfWork.GetRepository<RelationTypeEntity>();
+            var RelationPaticipandsRepo = unitOfWork.GetRepository<RelationPaticipandsEntity>();
 
 
             sf = sf?.CheckNullDefault();
@@ -238,16 +310,24 @@ namespace Tamasa.Web.Controllers
                 .OrderByDescending(x => x.CreatedAt)
                 .ToList();
 
+            var relationIds = pagedList.Select(x => x.Id.ToString()).ToList();
+
+
+            var participandsRelation = RelationPaticipandsRepo.GetAll().Where(x => relationIds.Contains(x.RelationId)).Select(x => new MyRelationsByRelationTypeResult()
+            {
+                relationId = x.RelationId,
+                ContactId = x.ContactId
+            }).ToList();
+
             var result = new List<GetMyRelationsQueryResultDto>();
             foreach (var item in pagedList)
             {
-                var Contact = contactRepo.GetFirstOrDefault(predicate: x => x.Id.ToString() == item.ContactId);
+                var Contact = participandsRelation;
                 var RelationsType = relationTypeRepo.GetFirstOrDefault(predicate: x => x.Id.ToString() == item.RelationTypeId);
                 var sss = new GetMyRelationsQueryResultDto()
                 {
                     OwnerId = item.OwnerId,
-                    ContactName = Contact.ContectName,
-                    ContactPhone = Contact.ContectPhone,
+                    contacts = participandsRelation.Where(x => x.relationId == item.Id.ToString()).ToList(),
                     RelationTypeName = RelationsType.RelationType,
                     Location = item.Location,
                     Discription = item.Discription
@@ -255,14 +335,7 @@ namespace Tamasa.Web.Controllers
                 result.Add(sss);
             }
 
-
-
             return Ok(result);
         }
-
-
-
-
-
     }
 }

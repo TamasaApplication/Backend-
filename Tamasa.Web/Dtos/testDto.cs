@@ -11,4 +11,33 @@ namespace Tamasa.Web.Dtos
         public string PassWord { get; set; }
 
     }
+
+
+
+
+
+    public class MyRelationsByRelationTypeResult
+    {
+        public string relationId { get; set; }
+        public string ContactId { get; set; }
+    }
+
+
+    public class GetUsersInfosDtos
+    {
+        public GetUsersInfosDtos(string contactName, string contactPhone)
+        {
+            ContactName = contactName;
+            ContactPhone = contactPhone;
+        }
+
+        public string ContactName { get; set; }
+        public string ContactPhone { get; set; }
+    }
+    public class GetMyRelationsByRelationTypeResultDtos
+    {
+        public string Location { get; set; }
+        public string Discription { get; set; }
+        public List<GetUsersInfosDtos> contats { get; set; }
+    }
 }

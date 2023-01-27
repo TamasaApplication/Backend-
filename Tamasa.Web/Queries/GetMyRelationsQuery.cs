@@ -9,16 +9,14 @@ using Tamasa.Inferastracter;
 using Tamasa.Web;
 using System.Collections.Generic;
 using System.Linq;
+using Tamasa.Web.Dtos;
 
 namespace AhmadBase.Web.Queries
 {
     public class GetMyRelationsQueryResultDto
     {
-
-
+        public List<MyRelationsByRelationTypeResult> contacts { get; set; }
         public string OwnerId { get; set; }
-        public string ContactName { get; set; }
-        public string ContactPhone { get; set; }
         public string RelationTypeName { get; set; }
         public string Location { get; set; }
         public string Discription { get; set; }
@@ -48,28 +46,28 @@ namespace AhmadBase.Web.Queries
 
         public async Task<ServiceResult<List<GetMyRelationsQueryResultDto>>> Handle(GetMyRelationsQuery request, CancellationToken cancellationToken)
         {
-            var relationTypeRepo = unitOfWork.GetRepository<RelationTypeEntity>();
-            var contactRepo = unitOfWork.GetRepository<ContactEntities>();
-            var relationRepo = unitOfWork.GetRepository<RelationEntity>();
-            var RES = "";
+        //    var relationTypeRepo = unitOfWork.GetRepository<RelationTypeEntity>();
+        //    var contactRepo = unitOfWork.GetRepository<ContactEntities>();
+        //    var relationRepo = unitOfWork.GetRepository<RelationEntity>();
+        //    var RES = "";
 
-            var relations = relationRepo.GetAll().Where(x => x.OwnerId == request.OwnerId).ToList();
+        //    var relations = relationRepo.GetAll().Where(x => x.OwnerId == request.OwnerId).ToList();
             var result = new List<GetMyRelationsQueryResultDto>();
-            foreach (var item in relations)
-            {
-                var Contact = contactRepo.GetFirstOrDefault(predicate: x => x.Id.ToString() == item.ContactId);
-                var RelationsType = relationTypeRepo.GetFirstOrDefault(predicate: x => x.Id.ToString() == item.RelationTypeId);
-                var sss = new GetMyRelationsQueryResultDto()
-                {
-                    OwnerId = item.OwnerId,
-                    ContactName = Contact.ContectName,
-                    ContactPhone = Contact.ContectPhone,
-                    RelationTypeName = RelationsType.RelationType,
-                    Location = item.Location,
-                    Discription = item.Discription
-                };
-                result.Add(sss);
-            }
+            //foreach (var item in relations)
+            //{
+            //    var Contact = contactRepo.GetFirstOrDefault(predicate: x => x.Id.ToString() == item.ContactId);
+            //    var RelationsType = relationTypeRepo.GetFirstOrDefault(predicate: x => x.Id.ToString() == item.RelationTypeId);
+            //    var sss = new GetMyRelationsQueryResultDto()
+            //    {
+            //        OwnerId = item.OwnerId,
+            //        ContactName = Contact.ContectName,
+            //        ContactPhone = Contact.ContectPhone,
+            //        RelationTypeName = RelationsType.RelationType,
+            //        Location = item.Location,
+            //        Discription = item.Discription
+            //    };
+            //    result.Add(sss);
+            //}
 
 
             return ServiceResult.Create<List<GetMyRelationsQueryResultDto>>(result);

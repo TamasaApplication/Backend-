@@ -11,7 +11,7 @@ namespace Tamasa.Inferastracter
     public class AppDbContextDesignTimeFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
         const string SqliteDbConnection = "Data Source=EFCorePractice.db;Cache=Shared";
-        const string SqlServerDbConnection = "server=localhost,1433;Database=gggggg.Db;Uid=sa;Pwd=yourStrong(!)Password";
+        const string SqlServerDbConnection = "server=localhost,1433;Database=ggggggfg.Db;Uid=sa;Pwd=yourStrong(!)Password";
 
         public AppDbContext CreateDbContext(string[] args)
         {

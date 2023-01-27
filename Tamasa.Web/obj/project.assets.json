@@ -10325,11 +10325,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Web/AhmadBase.Web.csproj",
+      "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/AhmadBase.Web.csproj",
       "projectName": "AhmadBase.Web",
-      "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Web/AhmadBase.Web.csproj",
+      "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/AhmadBase.Web.csproj",
       "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-      "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Web/obj/",
+      "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"
@@ -10344,11 +10344,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj": {
-              "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj"
+            "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj": {
+              "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj"
             },
-            "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
-              "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj"
+            "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
+              "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj"
             }
           }
         }

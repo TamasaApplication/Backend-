@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj": {}
+    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj": {}
   },
   "projects": {
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj": {
+    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj",
+        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj",
         "projectName": "AhmadBase.Core",
-        "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/AhmadBase.Core.csproj",
+        "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj",
         "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-        "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/obj/",
+        "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"

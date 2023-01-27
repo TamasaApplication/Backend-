@@ -25,3 +25,15 @@ C:/Users/mahmoudzadeh/Desktop/ahmad/GitHub/ChatMesssageBase2/Tamasa/Tamasa.Core/
 /Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Core/obj/Debug/net5.0/refint/AhmadBase.Core.dll
 /Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.pdb
 /Users/ahmadhfr/Documents/work/Backend/tamsa/gitClone/Authorozation/First/Tamasa.core/obj/Debug/net5.0/ref/AhmadBase.Core.dll
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/bin/Debug/net5.0/AhmadBase.Core.deps.json
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/bin/Debug/net5.0/AhmadBase.Core.dll
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/bin/Debug/net5.0/AhmadBase.Core.pdb
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.csproj.AssemblyReference.cache
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.AssemblyInfoInputs.cache
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.AssemblyInfo.cs
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.csproj.CoreCompileInputs.cache
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.dll
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/refint/AhmadBase.Core.dll
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.pdb
+/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/obj/Debug/net5.0/ref/AhmadBase.Core.dll

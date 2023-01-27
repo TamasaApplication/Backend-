@@ -26,6 +26,7 @@ namespace Tamasa.Inferastracter
         public DbSet<RelationTypeEntity> RelationTypes { get; set; }
         public DbSet<ContactEntities> Contacts { get; set; }
         public DbSet<RelationEntity> Relations { get; set; }
+        public DbSet<RelationPaticipandsEntity> RelationPaticipands { get; set; }
 
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)

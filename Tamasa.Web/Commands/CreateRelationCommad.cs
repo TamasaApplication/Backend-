@@ -8,6 +8,7 @@ using Tamasa.Core.Types;
 using Tamasa.Inferastracter;
 using Tamasa.Web;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace AhmadBase.Web.Commands
 {
@@ -15,15 +16,15 @@ namespace AhmadBase.Web.Commands
     {
 
         public string OwnerId { get; set; }
-        public string ContactId { get; set; }
+        public List<string>  ContactIds { get; set; }
         public string RelationTypeId { get; set; }
         public string Location { get; set; }
         public string Discription { get; set; }
 
-        public CreateRelationCommad(string ownerId, string contactId, string relationTypeId, string location, string discription)
+        public CreateRelationCommad(string ownerId, List<string> contactId, string relationTypeId, string location, string discription)
         {
             OwnerId = ownerId;
-            ContactId = contactId;
+            ContactIds = contactId;
             RelationTypeId = relationTypeId;
             Location = location;
             Discription = discription;
@@ -46,6 +47,7 @@ namespace AhmadBase.Web.Commands
             var relationTypeRepo = unitOfWork.GetRepository<RelationTypeEntity>();
             var contactRepo = unitOfWork.GetRepository<ContactEntities>();
             var relationRepo = unitOfWork.GetRepository<RelationEntity>();
+            var relatioParticipandsRepo = unitOfWork.GetRepository<RelationPaticipandsEntity>();
             var RES = "";
 
 
@@ -54,7 +56,7 @@ namespace AhmadBase.Web.Commands
             var tdddtt = contactRepo.GetAll();
 
             var realationTypeExist = relationTypeRepo.GetAll().Where(x => x.Id.ToString() == request.RelationTypeId);
-            var contactExist = contactRepo.GetAll().Where(x => x.Id.Equals(request.ContactId));
+            var contactExist = contactRepo.GetAll().Where(x => x.Id.Equals(request.ContactIds));
 
 
             if (realationTypeExist == null || contactExist == null)
@@ -62,9 +64,19 @@ namespace AhmadBase.Web.Commands
 
             else
             {
-                var instance =
-                    new RelationEntity(request.OwnerId, request.ContactId, request.RelationTypeId, request.Location, request.Discription);
+                var participandsRelations = new List<RelationPaticipandsEntity>();
+
+
+                var instance =  new RelationEntity(request.OwnerId, request.RelationTypeId, request.Location, request.Discription);
                 relationRepo.Insert(instance);
+
+
+                foreach (var item in request.ContactIds)
+                    participandsRelations.Add(new RelationPaticipandsEntity(instance.Id.ToString(), item));
+
+
+                relatioParticipandsRepo.Insert(participandsRelations);
+
                 unitOfWork.SaveChanges();
                 RES = instance.Id.ToString();
             }

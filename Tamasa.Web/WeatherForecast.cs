@@ -12,4 +12,9 @@ namespace Tamasa.Web
 
         public string Summary { get; set; }
     }
+    public class UsersInFoDtos
+    {
+        public string Email { get; set; }
+        public string Phone { get; set; }
+    }
 }
