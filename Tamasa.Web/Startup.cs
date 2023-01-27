@@ -99,7 +99,7 @@ using System.Linq;
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors();
             app.UseRouting();
 
 
