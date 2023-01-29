@@ -32,6 +32,7 @@ using System.Linq;
 
         public IConfiguration Configuration { get; }
 
+         
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -48,6 +49,16 @@ using System.Linq;
             services.AddSingleton<IAES, AesOperator>();
             //services.AddMediatR(typeof(Startup));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "_myAllowSpecificOrigins",
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("http://localhost:19006",
+                                                          "http://www.contoso.com").AllowAnyHeader()
+                                                  .AllowAnyMethod(); // add the allowed origins  
+                                  });
+            });
 
 
             services.AddSwaggerGen(c =>
@@ -99,7 +110,7 @@ using System.Linq;
             }
 
             app.UseHttpsRedirection();
-            app.UseCors();
+            app.UseCors("_myAllowSpecificOrigins");
             app.UseRouting();
 
 

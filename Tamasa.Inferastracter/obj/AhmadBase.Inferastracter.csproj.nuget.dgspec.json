@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {}
+    "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {}
   },
   "projects": {
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
+    "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
+        "projectUniqueName": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
         "projectName": "AhmadBase.Inferastracter",
-        "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
-        "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-        "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/obj/",
+        "projectPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
+        "packagesPath": "/Users/mahsakarimi/.nuget/packages/",
+        "outputPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"
+          "/Users/mahsakarimi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -82,12 +82,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }

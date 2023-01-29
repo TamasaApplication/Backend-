@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/AhmadBase.Web.csproj": {}
+    "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/AhmadBase.Web.csproj": {}
   },
   "projects": {
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj": {
+    "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/AhmadBase.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj",
+        "projectUniqueName": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/AhmadBase.Core.csproj",
         "projectName": "AhmadBase.Core",
-        "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj",
-        "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-        "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/obj/",
+        "projectPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/AhmadBase.Core.csproj",
+        "packagesPath": "/Users/mahsakarimi/.nuget/packages/",
+        "outputPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"
+          "/Users/mahsakarimi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -78,26 +78,36 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
+    "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
+        "projectUniqueName": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
         "projectName": "AhmadBase.Inferastracter",
-        "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
-        "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-        "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/obj/",
+        "projectPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj",
+        "packagesPath": "/Users/mahsakarimi/.nuget/packages/",
+        "outputPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"
+          "/Users/mahsakarimi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -165,26 +175,36 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/AhmadBase.Web.csproj": {
+    "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/AhmadBase.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/AhmadBase.Web.csproj",
+        "projectUniqueName": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/AhmadBase.Web.csproj",
         "projectName": "AhmadBase.Web",
-        "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/AhmadBase.Web.csproj",
-        "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-        "outputPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Web/obj/",
+        "projectPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/AhmadBase.Web.csproj",
+        "packagesPath": "/Users/mahsakarimi/.nuget/packages/",
+        "outputPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"
+          "/Users/mahsakarimi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -196,11 +216,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj": {
-                "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.core/AhmadBase.Core.csproj"
+              "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/AhmadBase.Core.csproj": {
+                "projectPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/AhmadBase.Core.csproj"
               },
-              "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
-                "projectPath": "/Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj"
+              "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj": {
+                "projectPath": "/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/AhmadBase.Inferastracter.csproj"
               }
             }
           }
@@ -253,6 +273,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -261,7 +295,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
