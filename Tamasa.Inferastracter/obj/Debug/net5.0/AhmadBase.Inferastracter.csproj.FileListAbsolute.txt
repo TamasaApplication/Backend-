@@ -43,3 +43,6 @@ C:/Users/mahmoudzadeh/Desktop/ahmad/GitHub/ChatMesssageBase2/Tamasa/Tamasa.Infer
 /Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.pdb
 /Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.genruntimeconfig.cache
 /Users/ahmadhfr/Documents/work/Backend/tamsa/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/ref/AhmadBase.Inferastracter.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/refint/AhmadBase.Inferastracter.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.pdb
