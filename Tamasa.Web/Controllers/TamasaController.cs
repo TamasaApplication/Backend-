@@ -136,7 +136,7 @@ namespace Tamasa.Web.Controllers
         }
 
 
-        [HttpPost("CreateRelationType")]
+        [HttpPost("CreateRelationType/{realationInput}")]
         [AllowAnonymous]
         public async Task<ActionResult> CreateRelationType(string realationInput)
         {

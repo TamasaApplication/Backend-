@@ -43,10 +43,11 @@ namespace AhmadBase.Web.Commands
             var repo = unitOfWork.GetRepository<RelationTypeEntity>();
             var RES = "";
             var realationExist = repo.GetFirstOrDefault(predicate: x => x.RelationType.Equals(request.Input));
-
+            if(request.Input is null)
+                return ServiceResult.Empty.SetError("is null").To<string>();
 
             if (realationExist != null)
-                return ServiceResult.Empty.SetError("This User Is Not Exist").To<string>();
+                return ServiceResult.Empty.SetError("This relation is  Exist").To<string>();
 
             else
             {

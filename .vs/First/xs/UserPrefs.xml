@@ -1,18 +1,23 @@
 ﻿<Properties StartupConfiguration="{68F4806C-0FA1-4B10-95E6-46CF78FEB3F6}|Tamasa.Web">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/Logic/Repository.cs" relfile="Tamasa.Core/Logic/Repository.cs" line="145" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.AhmadBase.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../usr/local/share/dotnet/sdk/7.0.102/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.EolTargetFrameworks.targets">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tamasa.Web/Program.cs">
     <Files>
       <File FileName="Tamasa.core/Logic/Repository.cs" />
       <File FileName="Tamasa.Web/appsettings.json" />
-      <File FileName="Tamasa.Web/Program.cs" />
-      <File FileName="Tamasa.Web/Controllers/BaseController.cs" Line="1" Column="1" />
-      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.102/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="267" Column="5" />
-      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.102/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.EolTargetFrameworks.targets" Line="28" Column="5" />
+      <File FileName="Tamasa.Web/Program.cs" Line="16" Column="1" />
+      <File FileName="Tamasa.Web/Controllers/BaseController.cs" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.102/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.102/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.EolTargetFrameworks.targets" />
+      <File FileName="Tamasa.Web/Dtos/LoginDto.cs" />
+      <File FileName="Tamasa.Web/Controllers/TamasaController.cs" />
+      <File FileName="Tamasa.Core/Filters.cs" />
+      <File FileName="Tamasa.Web/Startup.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,13 +29,11 @@
             <Node name="AhmadBase.Inferastracter" expanded="True" />
             <Node name="AhmadBase.Web" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Dtos" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.AhmadBase.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
