@@ -40,27 +40,39 @@ namespace Tamasa.Web.Commands
 
              
             if (userExist == null)
-                return ServiceResult.Empty.SetError("This User Is Not Exist").To<string>();
-
-
-            //if (userExist.PassWordHash != request.PassWordRepeat)
-            //    return ServiceResult.Empty.SetError("This User Is Not Exist").To<string>();
+                return ServiceResult.Empty.SetError("This User does  Not Exist").To<string>();
 
 
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1gfbfghdfghfghgfh ghghhfghdfhfghdgfhfghghdgfhdgfh23*/"));
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes("TamasaTamasaTamasaTamasaTamasaTamasa1234");
 
-
-            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-
-
-            var token = new JwtSecurityToken("Ahmad.Com", "Ahmad.Com", expires: DateTime.Today.AddDays(5),
-                claims: new List<Claim>()
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim("userId",userExist.Id.ToString()),
-                    new Claim("role","Admin")
-                }, signingCredentials: cred);
+                        new Claim("userId", userExist.Id.ToString()),
+                }),
+
+                Expires = DateTime.UtcNow.AddMinutes(30),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            //var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1gfbfghdfghfghgfh ghghhfghdfhfghdgfhfghghdgfhdgfh23*/"));
+
+
+            //var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+
+
+            //var token = new JwtSecurityToken("Ahmad.Com", "Ahmad.Com", expires: DateTime.Today.AddDays(5),
+            //    claims: new List<Claim>()
+            //    {
+            //        new Claim("userId",userExist.Id.ToString()),
+            //        new Claim("role","Admin")
+            //    }, signingCredentials: cred);
 
 
 

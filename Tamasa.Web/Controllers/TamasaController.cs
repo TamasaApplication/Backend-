@@ -50,9 +50,9 @@ namespace Tamasa.Web.Controllers
 
 
 
-        [HttpGet("GetUsdersInfoo")]
+        [HttpGet("GetUsdersInfoo/{id}")]
         [Authorize]
-        public async Task<ActionResult> GetUsdersInfo(string id)
+        public async Task<ActionResult> GetUsdersInfo([FromRoute]string id)
         {
             var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 

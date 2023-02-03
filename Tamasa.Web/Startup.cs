@@ -20,6 +20,7 @@ using System.Linq;
   using MediatR;
   using Microsoft.AspNetCore.Authentication.JwtBearer;
   using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 
   namespace Tamasa.Web
 {
@@ -63,22 +64,81 @@ using System.Linq;
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tamasa.Web", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "My App API",
+                    Description = "My App API - Version01",
+                    TermsOfService = new Uri("https://devtube.ir/"),
+                    License = new OpenApiLicense
+                    {
+                        Name = "DevTube",
+                        Url = new Uri("https://devtube.ir/"),
+                    }
+                });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    },
+                    Scheme = "Bearer",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] { }
+                }
+                });
+
+            });
+
+            var sp = services.BuildServiceProvider();
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ClockSkew = TimeSpan.FromMinutes(30),
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TamasaTamasaTamasaTamasaTamasaTamasa1234")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
             });
 
 
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(opetion =>
-                {
-                    opetion.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuerSigningKey =  true,
-                        IssuerSigningKey =new SymmetricSecurityKey(Encoding.UTF8.GetBytes("123*/")),
-                        ValidateIssuer = false,
-                        ValidateLifetime = true
-                    };
-                });
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(opetion =>
+            //    {
+            //        opetion.TokenValidationParameters = new TokenValidationParameters()
+            //        {
+            //            ValidateIssuerSigningKey =  true,
+            //            IssuerSigningKey =new SymmetricSecurityKey(Encoding.UTF8.GetBytes("123*/")),
+            //            ValidateIssuer = false,
+            //            ValidateLifetime = true
+            //        };
+            //    });
 
 
             services.AddHttpContextAccessor();
@@ -110,13 +170,13 @@ using System.Linq;
             }
 
             app.UseHttpsRedirection();
-            app.UseCors("_myAllowSpecificOrigins");
             app.UseRouting();
-
-
-
+            app.UseCors("_myAllowSpecificOrigins");
             app.UseAuthentication();
             app.UseAuthorization();
+
+
+
 
             app.UseEndpoints(endpoints =>
             {
