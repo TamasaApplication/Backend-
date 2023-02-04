@@ -1,0 +1,12 @@
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/bin/Debug/net5.0/AhmadBase.Core.deps.json
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/bin/Debug/net5.0/AhmadBase.Core.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/bin/Debug/net5.0/AhmadBase.Core.pdb
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.csproj.AssemblyReference.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.AssemblyInfoInputs.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.AssemblyInfo.cs
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.csproj.CoreCompileInputs.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/refint/AhmadBase.Core.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Core/obj/Debug/net5.0/AhmadBase.Core.pdb
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.core/obj/Debug/net5.0/ref/AhmadBase.Core.dll

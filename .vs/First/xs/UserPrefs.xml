@@ -1,27 +1,28 @@
 ﻿<Properties StartupConfiguration="{68F4806C-0FA1-4B10-95E6-46CF78FEB3F6}|Tamasa.Web">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.AhmadBase.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tamasa.Web/Controllers/TamasaController.cs">
     <Files>
-      <File FileName="Tamasa.Web/Controllers/TamasaController.cs" Line="1" Column="1" />
+      <File FileName="Tamasa.Web/Controllers/TamasaController.cs" Line="55" Column="34" />
+      <File FileName="Tamasa.Web/Dtos/AddContactDto.cs" Line="8" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="First" expanded="True">
+            <Node name="AhmadBase.Core" expanded="True" />
             <Node name="AhmadBase.Web" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TamasaController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Dtos" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AhmadBase.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

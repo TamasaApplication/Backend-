@@ -1,0 +1,15 @@
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/bin/Debug/net5.0/AhmadBase.Inferastracter.deps.json
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/bin/Debug/net5.0/AhmadBase.Inferastracter.runtimeconfig.json
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/bin/Debug/net5.0/AhmadBase.Inferastracter.runtimeconfig.dev.json
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/bin/Debug/net5.0/AhmadBase.Inferastracter.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/bin/Debug/net5.0/AhmadBase.Inferastracter.pdb
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.csproj.AssemblyReference.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.AssemblyInfoInputs.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.AssemblyInfo.cs
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.csproj.CoreCompileInputs.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/refint/AhmadBase.Inferastracter.dll
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.pdb
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/AhmadBase.Inferastracter.genruntimeconfig.cache
+/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Inferastracter/obj/Debug/net5.0/ref/AhmadBase.Inferastracter.dll
