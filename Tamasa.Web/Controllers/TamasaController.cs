@@ -50,16 +50,20 @@ namespace Tamasa.Web.Controllers
 
 
 
-        [HttpGet("GetUsdersInfoo/{id}")]
+        [HttpGet("GetUsdersInfoo")]
         [Authorize]
-        public async Task<ActionResult> GetUsdersInfo([FromRoute]string id)
+        public async Task<ActionResult> GetMyInfo()
         {
             var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 
             var contactRepo = unitOfWork.GetRepository<UserEntity>();
 
             var instace = unitOfWork.GetRepository<UserEntity>()
-                .GetAll().Where(x => x.Id.ToString() == ownerId).First();
+                .GetAll().Where(x => x.Id.ToString() == ownerId).FirstOrDefault()
+                ;
+
+            if (instace is null)
+                return BadRequest("this Id is not exist ");
 
 
             var tttt = new UsersInFoDtos()
@@ -167,7 +171,8 @@ namespace Tamasa.Web.Controllers
         [Authorize]
         public async Task<ActionResult> GetMyContacts()
         {
-            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var ownerId = "Ahmad";
+                //HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
             var command = new GetMyContactsQuery(ownerId.ToString());
             var result = await _mediator.Send<ServiceResult<List<GetMyContactsResultDto>>>(command);
             return await result.AsyncResult();
@@ -241,18 +246,17 @@ namespace Tamasa.Web.Controllers
 
 
 
-        [HttpGet("SearchOnMyCantacts")]
-        [AllowAnonymous]
-        public async Task<ActionResult> SearchOnMyCantacts([FromBody] SearchFilter sf)
+        [HttpPost("SearchOnMyCantacts/{input}")]
+        ///[Authorize]
+        public async Task<ActionResult> SearchOnMyCantacts(string input)
         {
             var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 
-            sf = sf?.CheckNullDefault();
-            var whereClause = sf.Translate<ContactEntities>();
-
             var pagedList = unitOfWork.GetRepository<ContactEntities>()
-                .GetAll().Where(
-                    predicate: whereClause)
+                .GetAll().Where(x => x.ContectName.Contains(input) ||
+                x.Description.Contains(input) ||
+                x.ContectPhone.Contains(input)
+                    )
                 .OrderByDescending(x => x.CreatedAt).ToList();
 
             var res = pagedList.Where(x => x.OwnerId == ownerId).ToList();
@@ -265,19 +269,16 @@ namespace Tamasa.Web.Controllers
 
 
 
-        [HttpGet("SearchOnRElationTypes")]
+        [HttpGet("SearchOnRElationTypes/{input}")]
         [AllowAnonymous]
-        public async Task<ActionResult> SearchOnRElationTypes([FromBody] SearchFilter sf)
+        public async Task<ActionResult> SearchOnRElationTypes(string input)
         {
-            var ownerId = "45078241-b18a-48b2-b99f-c92cdc110d95";
-            //HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 
-            sf = sf?.CheckNullDefault();
-            var whereClause = sf.Translate<RelationTypeEntity>();
 
             var pagedList = unitOfWork.GetRepository<RelationTypeEntity>()
                 .GetAll().Where(
-                    predicate: whereClause)
+                    x => x.RelationType.Contains(input))
                 .OrderByDescending(x => x.CreatedAt).Select(x => x.RelationType)
                 .ToList();
 
@@ -290,9 +291,9 @@ namespace Tamasa.Web.Controllers
 
 
 
-        [HttpGet("SearchOnRElation")]
+        [HttpGet("SearchOnRElation/{input}")]
         [AllowAnonymous]
-        public async Task<ActionResult> SearchOnRElation([FromBody] SearchFilter sf)
+        public async Task<ActionResult> SearchOnRElation(string input)
         {
             var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
 
@@ -301,12 +302,12 @@ namespace Tamasa.Web.Controllers
             var RelationPaticipandsRepo = unitOfWork.GetRepository<RelationPaticipandsEntity>();
 
 
-            sf = sf?.CheckNullDefault();
-            var whereClause = sf.Translate<RelationEntity>();
+            //sf = sf?.CheckNullDefault();
+            //var whereClause = sf.Translate<RelationEntity>();
 
             var pagedList = unitOfWork.GetRepository<RelationEntity>()
                 .GetAll().Where(
-                    predicate: whereClause)
+                    x => x.Discription.Contains(input) || x.Location.Contains(input))
                 .OrderByDescending(x => x.CreatedAt)
                 .ToList();
 

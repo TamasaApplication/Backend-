@@ -35,6 +35,7 @@ namespace Tamasa.Web
                 .NewConfig()
                 .Map(x => x.Id, x => x.Id)
                 .Map(x => x.Name, x => x.ContectName)
+                .Map(x => x.Description, x => x.Description)
                 .Map(x => x.PhoneNumber, x => x.ContectPhone);
         }
 

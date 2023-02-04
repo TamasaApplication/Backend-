@@ -17,6 +17,7 @@ namespace AhmadBase.Web.Queries
     {
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
+        public string Description { get; set; }
         public string Id { get; set; }
     }
 
@@ -46,7 +47,8 @@ namespace AhmadBase.Web.Queries
                 {
                     Name = x.ContectName,
                     PhoneNumber = x.ContectPhone,
-                    Id = x.Id.ToString()
+                    Id = x.Id.ToString(),
+                    Description = x.Description
                 }).ToList();
 
             return ServiceResult.Create<List<GetMyContactsResultDto>>(res);

@@ -7,20 +7,23 @@ namespace AhmadBase.Inferastracter.Datas.Entities
 {
 	public class ContactEntities : EntityBase
     {
-        public ContactEntities(string contectName, string contectPhone, string ownerId) 
+        public ContactEntities(string contectName, string contectPhone, string ownerId , string description) 
         {
+            ContectName = contectName;
             ContectPhone = contectPhone;
             OwnerId = ownerId;
             Id = Guid.NewGuid();
             IsDeleted = false;
             CreatedAt = DateTime.Now;
             UpdatedAt = null;
+            Description = description;
         }
 
         public string ContectName { get; set; }
         public string ContectPhone { get; set; }
         public string OwnerId { get; set; }
-      
+        public string Description { get; set; }
+
     }
 
     public class ContactEntitiesTypeConfiguration : BaseEntityTypeConfiguration<ContactEntities>
@@ -33,6 +36,7 @@ namespace AhmadBase.Inferastracter.Datas.Entities
             builder.Property(x => x.ContectName).IsRequired();
             builder.Property(x => x.ContectPhone).IsRequired();
             builder.Property(x => x.OwnerId).IsRequired();
+            builder.Property(x => x.Description).HasDefaultValue(null);
 
             builder.ToTable($"tbl{nameof(ContactEntities)}");
         }

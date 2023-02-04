@@ -69,11 +69,11 @@ using Microsoft.Extensions.Options;
                     Version = "v1",
                     Title = "My App API",
                     Description = "My App API - Version01",
-                    TermsOfService = new Uri("https://devtube.ir/"),
+                    TermsOfService = new Uri("https://Tamasa.ir/"),
                     License = new OpenApiLicense
                     {
-                        Name = "DevTube",
-                        Url = new Uri("https://devtube.ir/"),
+                        Name = "Tamasa",
+                        Url = new Uri("https://Tamasa.ir/"),
                     }
                 });
 
