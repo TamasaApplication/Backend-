@@ -48,7 +48,7 @@ namespace AhmadBase.Web.Commands
 
             foreach (var item in request.ContetS)
             {
-                var instance = new ContactEntities(item.ContactName, item.ContactPhone, request.ownerId);
+                var instance = new ContactEntities(item.ContactName, item.ContactPhone, request.ownerId, item.Description);
                 inserInstances.Add(instance);
             }
 
