@@ -114,12 +114,18 @@ namespace Tamasa.Web.Controllers
             var participandRelationsRepo = unitOfWork.GetRepository<RelationPaticipandsEntity>();
             var contactsRepo = unitOfWork.GetRepository<ContactEntities>();
 
-            var myRelation = relationsRepo.GetAll().Where(x => x.OwnerId == ownerId && x.RelationTypeId == typeId).First();
+
+            var myRelation = relationsRepo.GetAll()
+                .Where(x => x.OwnerId == ownerId && x.RelationTypeId == typeId)
+                .FirstOrDefault();
+
+            if (myRelation is null)
+                return BadRequest("This relation is not exist ");
 
 
-
-
-            var participandsRelation = participandRelationsRepo.GetAll().Where(x => myRelation.Id == x.Id).Select(x => new MyRelationsByRelationTypeResult()
+            var participandsRelation = participandRelationsRepo
+                .GetAll().Where(x => myRelation.Id.ToString() == x.RelationId)
+                .Select(x => new MyRelationsByRelationTypeResult()
             {
                 relationId = x.RelationId,
                 ContactId = x.ContactId
@@ -156,7 +162,8 @@ namespace Tamasa.Web.Controllers
         [Authorize]
         public async Task<ActionResult> AddContact([FromBody] List<AddContactDto> input)
         {
-            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var ownerId = "Ahmad";
+                ///HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
             var command = new InsertToMyContactCommand(input, ownerId.ToString());
             var result = await _mediator.Send<ServiceResult<string>>(command);
             return await result.AsyncResult();
@@ -190,17 +197,6 @@ namespace Tamasa.Web.Controllers
             return await result.AsyncResult();
         }
 
-
-
-        [HttpGet("GetMyRelations")]
-        [Authorize]
-        public async Task<ActionResult> GetMyRelations()
-        {
-            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
-            var command = new GetMyRelationsQuery(ownerId.ToString());
-            var result = await _mediator.Send<ServiceResult<List<GetMyRelationsQueryResultDto>>>(command);
-            return await result.AsyncResult();
-        }
 
 
 
@@ -246,7 +242,7 @@ namespace Tamasa.Web.Controllers
 
 
         [HttpPost("SearchOnMyCantacts/{input}")]
-        ///[Authorize]
+        [Authorize]
         public async Task<ActionResult> SearchOnMyCantacts(string input)
         {
             var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId").ToString();
