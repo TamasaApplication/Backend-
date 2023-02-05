@@ -171,8 +171,7 @@ namespace Tamasa.Web.Controllers
         [Authorize]
         public async Task<ActionResult> GetMyContacts()
         {
-            var ownerId = "Ahmad";
-                //HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
+            var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
             var command = new GetMyContactsQuery(ownerId.ToString());
             var result = await _mediator.Send<ServiceResult<List<GetMyContactsResultDto>>>(command);
             return await result.AsyncResult();
@@ -186,7 +185,7 @@ namespace Tamasa.Web.Controllers
         public async Task<ActionResult> CreateRelation(CreateRelationInputDto input)
         {
             var ownerId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "userId");
-            var command = new CreateRelationCommad(input.OwnerId, input.ContactId, input.RelationTypeId, input.Location, input.Discription);
+            var command = new CreateRelationCommad(ownerId.ToString(), input.ContactId, input.RelationTypeId, input.Location, input.Discription);
             var result = await _mediator.Send<ServiceResult<string>>(command);
             return await result.AsyncResult();
         }

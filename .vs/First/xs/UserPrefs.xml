@@ -1,19 +1,18 @@
 ﻿<Properties StartupConfiguration="{68F4806C-0FA1-4B10-95E6-46CF78FEB3F6}|Tamasa.Web">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.AhmadBase.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tamasa.Web/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tamasa.Web/Controllers/TamasaController.cs">
     <Files>
-      <File FileName="Tamasa.Web/Controllers/TamasaController.cs" Line="38" Column="31" />
+      <File FileName="Tamasa.Web/Controllers/TamasaController.cs" Line="110" Column="1" />
       <File FileName="Tamasa.Web/Dtos/AddContactDto.cs" />
-      <File FileName="Tamasa.Web/Startup.cs" Line="44" Column="1" />
       <File FileName="Tamasa.Web/Program.cs" Line="16" Column="1" />
+      <File FileName="Tamasa.Core/Logic/UnitOfWork.cs" Line="184" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="First" expanded="True">
-            <Node name="AhmadBase.Core" expanded="True" />
+            <Node name="AhmadBase.Core" expanded="True">
+              <Node name="Logic" expanded="True" />
+            </Node>
             <Node name="AhmadBase.Web" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Dtos" expanded="True" />
@@ -24,7 +23,13 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/Controllers/TamasaController.cs" relfile="Tamasa.Web/Controllers/TamasaController.cs" line="109" column="1" />
+      <Breakpoint enabled="false" file="/Users/mahsakarimi/Documents/Projects/Backend-/Tamasa.Web/Controllers/TamasaController.cs" relfile="Tamasa.Web/Controllers/TamasaController.cs" line="108" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AhmadBase.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>
